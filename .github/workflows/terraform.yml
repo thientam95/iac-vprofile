@@ -16,7 +16,7 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  BUCKET_TF_STATE: $ {{ secrets.BUCKET_TF_STATE }}
+  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
   AWS_REGION: ap-southeast-1
   EKS_CLUSTER: kitops-eks
 
@@ -55,5 +55,5 @@ jobs:
       
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
-        run: exit 1 
+        run: exit 1
 
